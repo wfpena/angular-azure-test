@@ -1,0 +1,29 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<ul *ngFor="let person of people">
+  <li (click)="openModal(person.id, person)">{{person.id}}{{person.name}}</li>
+</ul>
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <button (click)="openModal('kkk')">Open Modal</button>
+</div>
+<nav>
+  <a routerLink="/departments">Departments</a>
+  <a routerLink="/employees">Employees</a>
+  <a routerLink="/app-navbar">App NavBar</a>
+</nav>
+<router-outlet></router-outlet>
+<div class="jumbotron">
+  <div class="container">
+    <ngb-alert type="success" [dismissible]="false">
+    Bootstrap is working!
+    </ngb-alert>
+
+    <h1>
+      <i class="fa fa-bath" aria-hidden="true"></i>
+      And so is Font Awesome!
+    </h1>
+  </div>
+</div>

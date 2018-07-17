@@ -1,0 +1,45 @@
+<p>
+  Departments
+</p>
+<style>
+	.ui-select-choices.dropdown-menu {
+display: block;
+}
+</style>
+<ul *ngFor="let dept of departments">
+	<li (click)="onSelect(dept)">{{dept.id}}{{dept.name}}</li>
+</ul>
+
+<div style="width: 300px; margin-bottom: 20px;">
+  <h3>Select a single city</h3>
+  <!-- <ng-select [allowClear]="true"
+              [items]="items"
+              [disabled]="disabled"
+              (data)="refreshValue($event)"
+              (selected)="selected($event)"
+              (removed)="removed($event)"
+              (typed)="typed($event)"
+              ngDefaultControl 
+              placeholder="No city selected">
+  </ng-select> -->
+<ng-select [items]="cities"
+                   bindLabel="name"
+                   bindValue="id"
+                   placeholder="Select city"
+                   disable="true"
+                   [(ngModel)]="selectedCityId">
+        </ng-select>
+  <p></p>
+
+  <h1>My Application</h1>
+  <select [(ngModel)]="selectedValue">
+    <option *ngFor="let c of countries" [ngValue]="c">{{c.name}}</option>
+  </select>
+  <div>
+   <!--  <button type="button" class="btn btn-primary"
+            [(ngModel)]="disabledV" btnCheckbox
+            btnCheckboxTrue="1" btnCheckboxFalse="0">
+      {{disabled === '1' ? 'Enable' : 'Disable'}}
+    </button> -->
+  </div>
+</div>
